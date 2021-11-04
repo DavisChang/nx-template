@@ -14,10 +14,11 @@ Nx supports many plugins which add capabilities for developing different types o
 
 These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
 
-Below are our core plugins:
+Below are our core plugins or run `nx list` to see all the plugins.
 
 - [React](https://reactjs.org)
   - `npm install --save-dev @nrwl/react`
+  - `npm install --save-dev @nrwl/react-native`
 - Web (no framework frontends)
   - `npm install --save-dev @nrwl/web`
 - [Angular](https://angular.io)
@@ -41,11 +42,16 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 ## Generate a library
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Run `nx g @nrwl/react:lib header` to generate a header library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are shareable across libraries and applications. They can be imported from `@nx-template/mylib`.
+Libraries are shareable across libraries and applications. They can be imported from `@nx-template/header`.
+
+## Generate a storybook for lib header
+Run `nx generate storybook-configuration header` to generate configuration.
+
+Run `nx storybook header` to execute the storybook.
 
 ## Development server
 
@@ -59,27 +65,35 @@ Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new
 
 Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+Run `nx run-many --target=build --all` to build all projects.
+
 ## Running unit tests
 
 Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+
+Run `nx run-many --target=test --all` to test all projects.
 
 Run `nx affected:test` to execute the unit tests affected by a change.
 
 ## Running end-to-end tests
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
 ## Understand your workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+Run `nx affected:dep-graph` to see a diagram of the affected dependencies of your projects.
+Run `nx affected --target=lint`
 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
 
+## VS Code plugins
 
+Visit Nx Console plugin
 
 ## ☁ Nx Cloud
 

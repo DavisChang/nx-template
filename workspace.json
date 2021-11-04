@@ -2,6 +2,10 @@
   "version": 2,
   "projects": {
     "frontend": "apps/frontend",
-    "frontend-e2e": "apps/frontend-e2e"
+    "frontend-e2e": "apps/frontend-e2e",
+    "frontend2": "apps/frontend2",
+    "frontend2-e2e": "apps/frontend2-e2e",
+    "header": "libs/header",
+    "header-e2e": "apps/header-e2e"
   }
 }
